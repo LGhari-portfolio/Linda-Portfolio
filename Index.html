@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Linda Ghari – Portfolio</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f6fdf7;
+        color: #333;
+    }
+    header {
+        background: #9ed3a0;
+        padding: 25px;
+        text-align: center;
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        padding: 15px;
+        background: #e4f4e6;
+    }
+    nav button {
+        padding: 8px 15px;
+        border: none;
+        background: #9ed3a0;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    nav button:hover {
+        opacity: 0.8;
+    }
+    section {
+        display: none;
+        padding: 20px;
+        max-width: 800px;
+        margin: auto;
+        line-height: 1.7;
+    }
+    .active {
+        display: block;
+    }
+    h2 {
+        color: #5b8d5d;
+    }
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #e4f4e6;
+        margin-top: 50px;
+    }
+    a {
+        color: #5b8d5d;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+function showSection(lang) {
+    document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+    document.getElementById(lang).classList.add("active");
+}
+</script>
+
+</head>
+<body>
+
+<header>
+    Linda Ghari – Architect Portfolio
+</header>
+
+<nav>
+    <button onclick="showSection('de')">Deutsch</button>
+    <button onclick="showSection('en')">English</button>
+    <button onclick="showSection('fa')">فارسی</button>
+</nav>
+
+<!-- German -->
+<section id="de" class="active">
+    <h2>Über mich</h2>
+    <p>
+        Ich bin <strong>Linda Ghari</strong>, Architektin mit Erfahrung in Entwurf, 
+        Interior Design, 3D-Visualisierung und Projektüberwachung.<br><br>
+        Ich interessiere mich besonders für Energieeffizienz und nachhaltiges Bauen in Deutschland.
+    </p>
+
+    <h2>Dokumente</h2>
+    <p><a href="lebenslauf.pdf" target="_blank">Lebenslauf ansehen</a></p>
+    <p><a href="anschreiben.pdf" target="_blank">Anschreiben ansehen</a></p>
+</section>
+
+<!-- English -->
+<section id="en">
+    <h2>About Me</h2>
+    <p>
+        I am <strong>Linda Ghari</strong>, an architect with experience in design, 
+        interior design, 3D visualization, and project supervision.<br><br>
+        I am particularly interested in energy efficiency and sustainable architecture in Germany.
+    </p>
+
+    <h2>Documents</h2>
+    <p><a href="lebenslauf.pdf" target="_blank">View CV</a></p>
+    <p><a href="anschreiben.pdf" target="_blank">View Cover Letter</a></p>
+</section>
+
+<!-- Farsi -->
+<section id="fa" style="direction: rtl; text-align: right;">
+    <h2>درباره من</h2>
+    <p>
+        من <strong>لیندا غاری</strong> هستم، معمار با تجربه در طراحی، طراحی داخلی، 
+        مدل‌سازی سه‌بعدی و نظارت بر پروژه‌ها.<br><br>
+        به بهره‌وری انرژی و ساختمان پایدار در آلمان علاقه‌مندم.
+    </p>
+
+    <h2>مدارک</h2>
+    <p><a href="lebenslauf.pdf" target="_blank">مشاهده رزومه</a></p>
+    <p><a href="anschreiben.pdf" target="_blank">مشاهده انگیزه‌نامه</a></p>
+</section>
+
+<footer>
+    © 2025 Linda Ghari
+</footer>
+
+</body>
+</html>
