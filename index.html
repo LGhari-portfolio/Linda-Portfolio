@@ -7,163 +7,159 @@
 
 <style>
 body {
-    font-family: Arial, sans-serif;
-    background: #f7faf7;
-    color: #2f2f2f;
-    margin: 0;
-    line-height: 1.8;
-}
-header {
-    background: #9fcdb3;
-    color: #ffffff;
-    padding: 40px 20px;
-    text-align: center;
-}
-header h1 {
-    margin: 0;
-    font-size: 30px;
-}
-header p {
-    margin-top: 10px;
-    font-size: 16px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7faf7;
+  color: #2f2f2f;
 }
 
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #9fcdb3;
+  color: white;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 36px;
+  margin: 0;
+}
+.hero p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.hero span {
+  margin-top: 40px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* LANG */
 nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px;
-    background: #e5f2ea;
+  text-align: center;
+  padding: 15px;
 }
 nav button {
-    border: none;
-    background: #9fcdb3;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-nav button:hover {
-    opacity: 0.85;
+  background: #9fcdb3;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-section {
-    display: none;
-    max-width: 800px;
-    margin: auto;
-    padding: 40px 20px;
+/* ACCORDION */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
 }
-section.active {
-    display: block;
+details {
+  margin-bottom: 15px;
+  background: white;
+  border-radius: 6px;
+  padding: 10px 15px;
 }
-
-h2 {
-    color: #4f7f66;
-    margin-top: 40px;
+summary {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #4f7f66;
+}
+details p {
+  margin-top: 10px;
+  line-height: 1.7;
 }
 
 a {
-    color: #4f7f66;
-    font-weight: bold;
-    text-decoration: none;
+  color: #4f7f66;
+  font-weight: bold;
+  text-decoration: none;
 }
 
+section { display: none; }
+section.active { display: block; }
+
 footer {
-    text-align: center;
-    padding: 30px;
-    font-size: 14px;
-    color: #777;
+  text-align: center;
+  padding: 30px;
+  color: #777;
 }
 </style>
 
 <script>
 function showLang(id) {
-    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
 }
 </script>
 </head>
 
 <body>
 
-<header>
-    <h1>Linda Ghari</h1>
-    <p>Architektin · Architectural Designer</p>
-</header>
+<div class="hero">
+  <h1>Linda Ghari</h1>
+  <p>Architektin · Architectural Designer</p>
+  <span onclick="document.getElementById('content').scrollIntoView({behavior:'smooth'})">✕</span>
+</div>
 
 <nav>
-    <button onclick="showLang('de')">Deutsch</button>
-    <button onclick="showLang('en')">English</button>
-    <button onclick="showLang('fa')">فارسی</button>
+  <button onclick="showLang('de')">Deutsch</button>
+  <button onclick="showLang('en')">English</button>
+  <button onclick="showLang('fa')">فارسی</button>
 </nav>
 
-<!-- ================= DE ================= -->
+<div id="content" class="container">
+
 <section id="de" class="active">
-<h2>Über mich</h2>
+<details>
+<summary>Über mich</summary>
 <p>
 Ich bin <strong>Linda Ghari</strong>, Architektin mit Erfahrung in Entwurf,
 Interior Design, 3D-Visualisierung und Projektüberwachung.
-Mein besonderes Interesse gilt energieeffizientem und nachhaltigem Bauen in Deutschland.
+Mein Interesse gilt nachhaltigem und energieeffizientem Bauen in Deutschland.
 </p>
+</details>
 
-<h2>Anschreiben</h2>
+<details>
+<summary>Anschreiben (Kurzfassung)</summary>
 <p>
-Mit großem Interesse verfolge ich die Entwicklung nachhaltiger und energieeffizienter Bauprojekte in Deutschland.
-Durch meine praktische Erfahrung in Planung und Projektüberwachung bringe ich eine solide Grundlage für die
-Mitarbeit in einem Architekturbüro mit. Besonders motiviert bin ich, meine Kenntnisse kontinuierlich zu erweitern
-und mich fachlich weiterzuentwickeln.
+Ich bin motiviert, in einem Architekturbüro mitzuwirken und meine Kenntnisse
+in nachhaltiger Planung und Projektüberwachung weiterzuentwickeln.
 </p>
+</details>
 
-<h2>Dokumente</h2>
+<details>
+<summary>Dokumente</summary>
 <p><a href="lebenslauf.pdf" target="_blank">Lebenslauf ansehen</a></p>
-<p><a href="anschreiben.pdf" target="_blank">Anschreiben (PDF) ansehen</a></p>
+<p><a href="anschreiben.pdf" target="_blank">Anschreiben (PDF)</a></p>
+</details>
 </section>
 
-<!-- ================= EN ================= -->
 <section id="en">
-<h2>About Me</h2>
-<p>
-I am <strong>Linda Ghari</strong>, an architect with experience in design,
-interior design, 3D visualization, and project supervision.
-I am particularly interested in energy-efficient and sustainable architecture in Germany.
-</p>
-
-<h2>Cover Letter</h2>
-<p>
-I am highly motivated to contribute to sustainable and energy-efficient building projects in Germany.
-With hands-on experience in architectural design and project supervision, I bring a solid foundation
-and a strong willingness to grow professionally within an architectural team.
-</p>
-
-<h2>Documents</h2>
-<p><a href="lebenslauf.pdf" target="_blank">View CV</a></p>
-<p><a href="anschreiben.pdf" target="_blank">View Cover Letter (PDF)</a></p>
+<details><summary>About Me</summary><p>Architect with experience in design and supervision.</p></details>
+<details><summary>Cover Letter</summary><p>Motivated to work on sustainable architecture.</p></details>
+<details><summary>Documents</summary>
+<p><a href="lebenslauf.pdf">View CV</a></p>
+</details>
 </section>
 
-<!-- ================= FA ================= -->
 <section id="fa" style="direction: rtl; text-align: right;">
-<h2>درباره من</h2>
-<p>
-من <strong>لیندا قاری</strong> هستم، معمار با تجربه در طراحی معماری،
-طراحی داخلی، مدل‌سازی سه‌بعدی و نظارت بر پروژه‌ها.
-به معماری پایدار و بهره‌وری انرژی در آلمان علاقه‌مندم.
-</p>
-
-<h2>انگیزه‌نامه</h2>
-<p>
-علاقه‌مندم در پروژه‌های معماری پایدار و کم‌مصرف فعالیت کنم.
-با تجربه‌ی عملی در طراحی و نظارت بر اجرای پروژه‌ها،
-انگیزه‌ی بالایی برای یادگیری، پیشرفت حرفه‌ای و همکاری در یک دفتر معماری دارم.
-</p>
-
-<h2>مدارک</h2>
-<p><a href="lebenslauf.pdf" target="_blank">مشاهده رزومه</a></p>
-<p><a href="anschreiben.pdf" target="_blank">مشاهده انگیزه‌نامه (PDF)</a></p>
+<details><summary>درباره من</summary><p>معمار با تجربه در طراحی و نظارت پروژه.</p></details>
+<details><summary>انگیزه‌نامه</summary><p>علاقه‌مند به معماری پایدار در آلمان.</p></details>
+<details><summary>مدارک</summary>
+<p><a href="lebenslauf.pdf">رزومه</a></p>
+</details>
 </section>
 
-<footer>
-© 2025 Linda Ghari
-</footer>
+</div>
+
+<footer>© 2025 Linda Ghari</footer>
 
 </body>
 </html>
