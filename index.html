@@ -1,165 +1,163 @@
-<!DOCTYPE html>
-<html lang="de">
+<!DOCTYPE html><html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Linda Ghari – Architect</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7faf7;
-  color: #2f2f2f;
-}
-
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #9fcdb3;
-  color: white;
-  text-align: center;
-}
-.hero h1 {
-  font-size: 36px;
-  margin: 0;
-}
-.hero p {
-  margin-top: 10px;
-  font-size: 18px;
-}
-.hero span {
-  margin-top: 40px;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* LANG */
-nav {
-  text-align: center;
-  padding: 15px;
-}
-nav button {
-  background: #9fcdb3;
-  border: none;
-  color: white;
-  padding: 8px 14px;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-/* ACCORDION */
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
-details {
-  margin-bottom: 15px;
-  background: white;
-  border-radius: 6px;
-  padding: 10px 15px;
-}
-summary {
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #4f7f66;
-}
-details p {
-  margin-top: 10px;
-  line-height: 1.7;
-}
-
-a {
-  color: #4f7f66;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-section { display: none; }
-section.active { display: block; }
-
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #777;
-}
-</style>
-
-<script>
-function showLang(id) {
-  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-}
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linda Ghari | Architect Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #f7f7f7;
+    }
+    header {
+      background: #ffffff;
+      padding: 60px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 500px;
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero-text h2 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+    .availability {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .contact-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .hero-image img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background: #ffffff;
+      margin-bottom: 20px;
+    }
+    section h3 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    .skills ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+    .skills li {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #fafafa;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-card div {
+      padding: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
 </head>
-
-<body>
-
-<div class="hero">
-  <h1>Linda Ghari</h1>
-  <p>Architektin · Architectural Designer</p>
-<span onclick="document.getElementById('content').scrollIntoView({behavior:'smooth'})">↓</span>
+<body><header>
+  <div class="hero-text">
+    <h1>Linda Ghari</h1>
+    <h2>Architektin (M.A.) | Internationale Berufserfahrung</h2>
+    <p class="availability">Verfügbar ab Oktober 2026<br/>Festanstellung | Projektmitarbeit | Praktikum</p>
+    <a class="contact-btn" href="mailto:yourmail@email.com">Kontakt aufnehmen</a>
+  </div>
+  <div class="hero-image">
+    <!-- Replace profile.jpg with your own photo -->
+    <img src="images/profile.jpg" alt="Portrait Linda Ghari" />
+  </div>
+</header><section id="about">
+  <h3>Über mich</h3>
+  <p>
+    Ich bin Architektin (M.A.) mit internationaler Ausbildung und mehrjähriger Berufserfahrung.
+    Mein Schwerpunkt liegt auf Entwurfs- und Ausführungsplanung, nachhaltiger Architektur und
+    energieeffizientem Bauen. Im Januar 2025 habe ich die Weiterbildung
+    "Bauwesen für zugewanderte Bauingenieure und Architekten" erfolgreich abgeschlossen.
+  </p>
+</section><section class="skills">
+  <h3>Schwerpunkte & Kompetenzen</h3>
+  <ul>
+    <li>Entwurfsplanung & Konzeptentwicklung</li>
+    <li>Ausführungsplanung & Detailplanung</li>
+    <li>Nachhaltige Architektur</li>
+    <li>Energieeffizientes Bauen</li>
+    <li>3D-Visualisierung</li>
+    <li>Interdisziplinäre Teamarbeit</li>
+  </ul>
+</section><section id="projects">
+  <h3>Selected Projects</h3>
+  <div class="projects">
+    <!-- Project Card -->
+    <div class="project-card">
+      <img src="images/project1.jpg" alt="Project 1" />
+      <div>
+        <strong>Residential Building</strong><br/>
+        <small>Design & Execution Planning</small>
+      </div>
+    </div><div class="project-card">
+  <img src="images/project2.jpg" alt="Project 2" />
+  <div>
+    <strong>Interior Design Project</strong><br/>
+    <small>Concept & Visualization</small>
+  </div>
 </div>
 
-<nav>
-  <button onclick="showLang('de')">Deutsch</button>
-  <button onclick="showLang('en')">English</button>
-  <button onclick="showLang('fa')">فارسی</button>
-</nav>
-
-<div id="content" class="container">
-
-<section id="de" class="active">
-<details>
-<summary>Über mich</summary>
-<p>
-Ich bin <strong>Linda Ghari</strong>, Architektin mit Erfahrung in Entwurf,
-Interior Design, 3D-Visualisierung und Projektüberwachung.
-Mein Interesse gilt nachhaltigem und energieeffizientem Bauen in Deutschland.
-</p>
-</details>
-
-<details>
-<summary>Anschreiben (Kurzfassung)</summary>
-<p>
-Ich bin motiviert, in einem Architekturbüro mitzuwirken und meine Kenntnisse
-in nachhaltiger Planung und Projektüberwachung weiterzuentwickeln.
-</p>
-</details>
-
-<details>
-<summary>Dokumente</summary>
-<p><a href="lebenslauf.pdf" target="_blank">Lebenslauf ansehen</a></p>
-<p><a href="anschreiben.pdf" target="_blank">Anschreiben (PDF)</a></p>
-</details>
-</section>
-
-<section id="en">
-<details><summary>About Me</summary><p>Architect with experience in design and supervision.</p></details>
-<details><summary>Cover Letter</summary><p>Motivated to work on sustainable architecture.</p></details>
-<details><summary>Documents</summary>
-<p><a href="lebenslauf.pdf">View CV</a></p>
-</details>
-</section>
-
-<section id="fa" style="direction: rtl; text-align: right;">
-<details><summary>درباره من</summary><p>معمار با تجربه در طراحی و نظارت پروژه.</p></details>
-<details><summary>انگیزه‌نامه</summary><p>علاقه‌مند به معماری پایدار در آلمان.</p></details>
-<details><summary>مدارک</summary>
-<p><a href="lebenslauf.pdf">رزومه</a></p>
-</details>
-</section>
-
+<div class="project-card">
+  <img src="images/project3.jpg" alt="Project 3" />
+  <div>
+    <strong>Mixed-Use Building</strong><br/>
+    <small>Sustainable Design</small>
+  </div>
 </div>
 
-<footer>© 2025 Linda Ghari</footer>
-
-</body>
+  </div>
+</section><footer>
+  © 2025 Linda Ghari · Architect Portfolio
+</footer></body>
 </html>
