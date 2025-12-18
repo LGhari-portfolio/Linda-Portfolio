@@ -19,6 +19,10 @@
       justify-content: center;
       gap: 40px;
       flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     .hero-text {
       max-width: 500px;
@@ -62,6 +66,41 @@
       margin-bottom: 20px;
       font-size: 1.8rem;
     }
+    .accordion { margin-bottom: 20px; }
+    .accordion-btn {
+      width: 100%;
+      text-align: left;
+      padding: 18px 20px;
+      font-size: 1.25rem;
+      background: #f2f2f2;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.3s ease;
+    }
+    .accordion-btn::after {
+      content: '▾';
+      position: absolute;
+      right: 20px;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+    .accordion-btn.active {
+      background: #e0e0e0;
+    }
+    .accordion-btn.active::after {
+      transform: rotate(180deg);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 20px;
+      background: #ffffff;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .accordion-content.open {
+      padding: 20px;
+    }
     .skills ul {
       list-style: none;
       padding: 0;
@@ -84,6 +123,11 @@
       border-radius: 6px;
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.02);
     }
     .project-card img {
       width: 100%;
@@ -92,6 +136,22 @@
     }
     .project-card div {
       padding: 15px;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 200;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
     }
     footer {
       text-align: center;
@@ -109,55 +169,99 @@
     <a class="contact-btn" href="mailto:yourmail@email.com">Kontakt aufnehmen</a>
   </div>
   <div class="hero-image">
-    <!-- Replace profile.jpg with your own photo -->
     <img src="images/profile.jpg" alt="Portrait Linda Ghari" />
   </div>
-</header><section id="about">
-  <h3>Über mich</h3>
-  <p>
-    Ich bin Architektin (M.A.) mit internationaler Ausbildung und mehrjähriger Berufserfahrung.
-    Mein Schwerpunkt liegt auf Entwurfs- und Ausführungsplanung, nachhaltiger Architektur und
-    energieeffizientem Bauen. Im Januar 2025 habe ich die Weiterbildung
-    "Bauwesen für zugewanderte Bauingenieure und Architekten" erfolgreich abgeschlossen.
-  </p>
-</section><section class="skills">
-  <h3>Schwerpunkte & Kompetenzen</h3>
-  <ul>
-    <li>Entwurfsplanung & Konzeptentwicklung</li>
-    <li>Ausführungsplanung & Detailplanung</li>
-    <li>Nachhaltige Architektur</li>
-    <li>Energieeffizientes Bauen</li>
-    <li>3D-Visualisierung</li>
-    <li>Interdisziplinäre Teamarbeit</li>
-  </ul>
-</section><section id="projects">
-  <h3>Selected Projects</h3>
-  <div class="projects">
-    <!-- Project Card -->
-    <div class="project-card">
-      <img src="images/project1.jpg" alt="Project 1" />
-      <div>
-        <strong>Residential Building</strong><br/>
-        <small>Design & Execution Planning</small>
+</header><section class="accordion">
+  <button class="accordion-btn">Über mich</button>
+  <div class="accordion-content">
+    <p>
+      Ich bin Architektin (M.A.) mit internationaler Ausbildung und mehrjähriger Berufserfahrung.
+      Mein Schwerpunkt liegt auf Entwurfs- und Ausführungsplanung, nachhaltiger Architektur und
+      energieeffizientem Bauen. Im Januar 2025 habe ich die Weiterbildung
+      "Bauwesen für zugewanderte Bauingenieure und Architekten" erfolgreich abgeschlossen.
+    </p>
+  </div>
+</section><section class="accordion">
+  <button class="accordion-btn">Schwerpunkte & Kompetenzen</button>
+  <div class="accordion-content">
+    <ul>
+      <li>Entwurfsplanung & Konzeptentwicklung</li>
+      <li>Ausführungsplanung & Detailplanung</li>
+      <li>Nachhaltige Architektur</li>
+      <li>Energieeffizientes Bauen</li>
+      <li>3D-Visualisierung</li>
+      <li>Interdisziplinäre Teamarbeit</li>
+    </ul>
+  </div>
+</section><section class="accordion">
+  <button class="accordion-btn">Selected Projects</button>
+  <div class="accordion-content">
+    <div class="projects">
+      <div class="project-card">
+        <img src="images/project1.jpg" alt="Project 1" />
+        <div>
+          <strong>Residential Building</strong><br/>
+          <small>Design & Execution Planning</small>
+        </div>
       </div>
-    </div><div class="project-card">
-  <img src="images/project2.jpg" alt="Project 2" />
-  <div>
-    <strong>Interior Design Project</strong><br/>
-    <small>Concept & Visualization</small>
+      <div class="project-card">
+        <img src="images/project2.jpg" alt="Project 2" />
+        <div>
+          <strong>Interior Design Project</strong><br/>
+          <small>Concept & Visualization</small>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/project3.jpg" alt="Project 3" />
+        <div>
+          <strong>Mixed-Use Building</strong><br/>
+          <small>Sustainable Design</small>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-<div class="project-card">
-  <img src="images/project3.jpg" alt="Project 3" />
-  <div>
-    <strong>Mixed-Use Building</strong><br/>
-    <small>Sustainable Design</small>
-  </div>
-</div>
-
-  </div>
-</section><footer>
+</section><div class="lightbox" id="lightbox">
+  <img src="" alt="Lightbox Image" />
+</div><footer>
   © 2025 Linda Ghari · Architect Portfolio
-</footer></body>
+</footer><script>
+  const accBtns = document.querySelectorAll('.accordion-btn');
+  accBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      accBtns.forEach(other => {
+        if (other !== btn) {
+          other.classList.remove('active');
+          other.nextElementSibling.style.maxHeight = null;
+          other.nextElementSibling.classList.remove('open');
+        }
+      });
+      btn.classList.toggle('active');
+      const content = btn.nextElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        content.classList.remove('open');
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.classList.add('open');
+      }
+    });
+  });
+
+  const defaultOpen = document.querySelector('.accordion-btn:last-of-type');
+  defaultOpen.click();
+
+  // Lightbox for project images
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  const projectImgs = document.querySelectorAll('.project-card img');
+  projectImgs.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+    });
+  });
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script></body>
 </html>
