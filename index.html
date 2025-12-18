@@ -27,138 +27,35 @@
     .hero-text {
       max-width: 500px;
     }
-    .hero-text h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    .hero-text h2 {
-      font-size: 1.2rem;
-      font-weight: normal;
-      margin-bottom: 20px;
-    }
-    .availability {
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .contact-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #000;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    .hero-image img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-      background: #ffffff;
-      margin-bottom: 20px;
-    }
-    section h3 {
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-    }
+    .hero-text h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero-text h2 { font-size: 1.2rem; font-weight: normal; margin-bottom: 20px; }
+    .availability { font-weight: bold; margin-bottom: 20px; }
+    .contact-btn { display: inline-block; padding: 10px 20px; background: #000; color: #fff; text-decoration: none; border-radius: 4px; }
+    .hero-image img { width: 160px; height: 160px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; background: #ffffff; margin-bottom: 20px; }
+    section h3 { margin-bottom: 20px; font-size: 1.8rem; }
     .accordion { margin-bottom: 20px; }
     .accordion-btn {
-      width: 100%;
-      text-align: left;
-      padding: 18px 20px;
-      font-size: 1.25rem;
-      background: #f2f2f2;
-      border: none;
-      cursor: pointer;
-      position: relative;
-      transition: background 0.3s ease;
+      width: 100%; text-align: left; padding: 18px 20px; font-size: 1.25rem; background: #f2f2f2; border: none; cursor: pointer; position: relative; transition: background 0.3s ease;
     }
-    .accordion-btn::after {
-      content: '▾';
-      position: absolute;
-      right: 20px;
-      font-size: 1.2rem;
-      transition: transform 0.3s ease;
-    }
-    .accordion-btn.active {
-      background: #e0e0e0;
-    }
-    .accordion-btn.active::after {
-      transform: rotate(180deg);
-    }
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 20px;
-      background: #ffffff;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-    }
-    .accordion-content.open {
-      padding: 20px;
-    }
-    .skills ul {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 10px;
-    }
-    .skills li {
-      background: #f0f0f0;
-      padding: 10px;
-      border-radius: 4px;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .project-card {
-      background: #fafafa;
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .project-card:hover {
-      transform: scale(1.02);
-    }
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .project-card div {
-      padding: 15px;
-    }
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 200;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9rem;
-      color: #666;
-    }
+    .accordion-btn::after { content: '▾'; position: absolute; right: 20px; font-size: 1.2rem; transition: transform 0.3s ease; }
+    .accordion-btn.active { background: #e0e0e0; }
+    .accordion-btn.active::after { transform: rotate(180deg); }
+    .accordion-content { max-height: 0; overflow: hidden; padding: 0 20px; background: #ffffff; transition: max-height 0.4s ease, padding 0.3s ease; }
+    .accordion-content.open { padding: 20px; }
+    .skills ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+    .skills li { background: #f0f0f0; padding: 10px; border-radius: 4px; }
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .project-card { background: #fafafa; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s ease; }
+    .project-card:hover { transform: scale(1.02); }
+    .project-card img { width: 100%; height: 180px; object-fit: cover; }
+    .project-card div { padding: 15px; }
+    .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 200; }
+    .lightbox img { max-width: 90%; max-height: 90%; }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); font-size: 2rem; color: #fff; cursor: pointer; user-select: none; padding: 0 20px; }
+    .lightbox-prev { left: 0; }
+    .lightbox-next { right: 0; }
+    footer { text-align: center; padding: 40px 20px; font-size: 0.9rem; color: #666; }
   </style>
 </head>
 <body><header>
@@ -174,12 +71,7 @@
 </header><section class="accordion">
   <button class="accordion-btn">Über mich</button>
   <div class="accordion-content">
-    <p>
-      Ich bin Architektin (M.A.) mit internationaler Ausbildung und mehrjähriger Berufserfahrung.
-      Mein Schwerpunkt liegt auf Entwurfs- und Ausführungsplanung, nachhaltiger Architektur und
-      energieeffizientem Bauen. Im Januar 2025 habe ich die Weiterbildung
-      "Bauwesen für zugewanderte Bauingenieure und Architekten" erfolgreich abgeschlossen.
-    </p>
+    <p>Ich bin Architektin (M.A.) mit internationaler Ausbildung und mehrjähriger Berufserfahrung. Mein Schwerpunkt liegt auf Entwurfs- und Ausführungsplanung, nachhaltiger Architektur und energieeffizientem Bauen. Im Januar 2025 habe ich die Weiterbildung "Bauwesen für zugewanderte Bauingenieure und Architekten" erfolgreich abgeschlossen.</p>
   </div>
 </section><section class="accordion">
   <button class="accordion-btn">Schwerpunkte & Kompetenzen</button>
@@ -197,71 +89,64 @@
   <button class="accordion-btn">Selected Projects</button>
   <div class="accordion-content">
     <div class="projects">
-      <div class="project-card">
-        <img src="images/project1.jpg" alt="Project 1" />
-        <div>
-          <strong>Residential Building</strong><br/>
-          <small>Design & Execution Planning</small>
-        </div>
+      <div class="project-card" data-images="images/project1-1.jpg,images/project1-2.jpg,images/project1-3.jpg">
+        <img src="images/project1-1.jpg" alt="Project 1" />
+        <div><strong>Residential Building</strong><br/><small>Design & Execution Planning</small></div>
       </div>
-      <div class="project-card">
-        <img src="images/project2.jpg" alt="Project 2" />
-        <div>
-          <strong>Interior Design Project</strong><br/>
-          <small>Concept & Visualization</small>
-        </div>
+      <div class="project-card" data-images="images/project2-1.jpg,images/project2-2.jpg">
+        <img src="images/project2-1.jpg" alt="Project 2" />
+        <div><strong>Interior Design Project</strong><br/><small>Concept & Visualization</small></div>
       </div>
-      <div class="project-card">
-        <img src="images/project3.jpg" alt="Project 3" />
-        <div>
-          <strong>Mixed-Use Building</strong><br/>
-          <small>Sustainable Design</small>
-        </div>
+      <div class="project-card" data-images="images/project3-1.jpg,images/project3-2.jpg,images/project3-3.jpg">
+        <img src="images/project3-1.jpg" alt="Project 3" />
+        <div><strong>Mixed-Use Building</strong><br/><small>Sustainable Design</small></div>
       </div>
     </div>
   </div>
 </section><div class="lightbox" id="lightbox">
+  <span class="lightbox-nav lightbox-prev">&#10094;</span>
   <img src="" alt="Lightbox Image" />
-</div><footer>
-  © 2025 Linda Ghari · Architect Portfolio
-</footer><script>
+  <span class="lightbox-nav lightbox-next">&#10095;</span>
+</div><footer>© 2025 Linda Ghari · Architect Portfolio</footer><script>
   const accBtns = document.querySelectorAll('.accordion-btn');
   accBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       accBtns.forEach(other => {
-        if (other !== btn) {
-          other.classList.remove('active');
-          other.nextElementSibling.style.maxHeight = null;
-          other.nextElementSibling.classList.remove('open');
-        }
+        if (other !== btn) { other.classList.remove('active'); other.nextElementSibling.style.maxHeight = null; other.nextElementSibling.classList.remove('open'); }
       });
       btn.classList.toggle('active');
       const content = btn.nextElementSibling;
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-        content.classList.remove('open');
-      } else {
-        content.style.maxHeight = content.scrollHeight + 'px';
-        content.classList.add('open');
-      }
+      if (content.style.maxHeight) { content.style.maxHeight = null; content.classList.remove('open'); }
+      else { content.style.maxHeight = content.scrollHeight + 'px'; content.classList.add('open'); }
     });
   });
+  document.querySelector('.accordion-btn:last-of-type').click();
 
-  const defaultOpen = document.querySelector('.accordion-btn:last-of-type');
-  defaultOpen.click();
-
-  // Lightbox for project images
+  // Multi-image Lightbox
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = lightbox.querySelector('img');
-  const projectImgs = document.querySelectorAll('.project-card img');
-  projectImgs.forEach(img => {
-    img.addEventListener('click', () => {
+  const projectCards = document.querySelectorAll('.project-card');
+  let currentImages = [];
+  let currentIndex = 0;
+
+  projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+      currentImages = card.dataset.images.split(',');
+      currentIndex = 0;
+      lightboxImg.src = currentImages[currentIndex];
       lightbox.style.display = 'flex';
-      lightboxImg.src = img.src;
     });
   });
-  lightbox.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-  });
+
+  const showImage = (index) => {
+    if(index < 0) index = currentImages.length - 1;
+    if(index >= currentImages.length) index = 0;
+    currentIndex = index;
+    lightboxImg.src = currentImages[currentIndex];
+  };
+
+  lightbox.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex - 1); });
+  lightbox.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex + 1); });
+  lightbox.addEventListener('click', () => { lightbox.style.display = 'none'; });
 </script></body>
 </html>
