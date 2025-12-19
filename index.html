@@ -5,7 +5,7 @@
   <title>Linda Ghari | Architect Portfolio</title>
   <style>
     body {margin:0; font-family:Arial, Helvetica, sans-serif; background:#f7f7f7; color:#222; line-height:1.6;}
-    header {background:#fff; padding:60px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; position:sticky; top:0; z-index:100; box-shadow:0 2px 10px rgba(0,0,0,0.05);}
+    header {background: linear-gradient(135deg, #2c3e50, #6a89cc); padding:80px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:40px; position:sticky; top:0; z-index:100; color:#fff; box-shadow:0 4px 20px rgba(0,0,0,0.2);}
     .hero-text {max-width:500px;}
     .hero-text h1 {font-size:2.5rem; margin-bottom:10px;}
     .hero-text h2 {font-size:1.2rem; font-weight:normal; margin-bottom:20px;}
@@ -40,14 +40,15 @@ footer {text-align:center; padding:40px 20px; font-size:0.9rem; color:#666;}
     <h1>Linda Ghari</h1>
     <h2>Architektin (M.A.) | Internationale Berufserfahrung</h2>
     <p class="availability">Verfügbar ab Oktober 2026<br/>Festanstellung | Projektmitarbeit | Praktikum</p>
-    <a class="contact-btn" href="mailto:yourmail@email.com">Kontakt aufnehmen</a>
+    <a class="contact-btn" href="mailto:lindagharri@yahoo.com">Kontakt aufnehmen</a><br/><br/>
+    <a class="contact-btn" href="cv/Linda_Ghari_CV.pdf" target="_blank">Lebenslauf herunterladen (PDF)</a>
   </div>
   <div class="hero-image">
     <img src="images/profile.jpg" alt="Portrait Linda Ghari">
   </div>
-</header><!-- Buttons to open modals --><section style="text-align:center; margin:40px 0;">
+</header><!-- Buttons to open modals --><section style="position:fixed; right:20px; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:12px; z-index:150;">
   <button onclick="openModal('modal-over-mich')">Über mich</button>
-  <button onclick="openModal('modal-skills')">Schwerpunkte & Kompetenzen</button>
+  <button onclick="openModal('modal-skills')">Schwerpunkte</button>
   <button onclick="openModal('modal-projects')">Projekte</button>
 </section><!-- Section Modals --><div class="section-modal" id="modal-over-mich">
   <span class="section-modal-close" onclick="closeModal()">&times;</span>
@@ -66,7 +67,7 @@ footer {text-align:center; padding:40px 20px; font-size:0.9rem; color:#666;}
   </ul>
 </div><div class="section-modal" id="modal-projects">
   <span class="section-modal-close" onclick="closeModal()">&times;</span>
-  <h3>Selected Projects</h3>
+  <h3>Ausgewählte Projekts</h3>
   <div class="projects">
     <div class="project-card" data-images="images/project1-1.jpg,images/project1-2.jpg,images/project1-3.jpg">
       <img src="images/project1-1.jpg" alt="Project 1">
