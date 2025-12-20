@@ -14,23 +14,25 @@
     .availability {font-weight:bold; margin-bottom:20px;}
     .contact-btn {display:inline-block; padding:10px 20px; background:#000; color:#fff; text-decoration:none; border-radius:4px;}
     .hero-image img {width:160px; height:160px; object-fit:cover; border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.15);}    /* Hamburger */
-.menu-toggle {position:fixed; top:20px; right:20px; font-size:2rem; background:#000; color:#fff; width:48px; height:48px; display:flex; align-items:center; justify-content:center; border-radius:50%; cursor:pointer; z-index:180; transition:transform 0.3s ease;}    
+.menu-toggle {position:fixed; top:20px; right:20px; font-size:2rem; background:#000; color:#fff; width:48px; height:48px; display:flex; align-items:center; justify-content:center; border-radius:50%; cursor:pointer; z-index:180;}    
 
 /* Side Menu */
 .side-menu {position:fixed; top:0; right:-280px; width:280px; height:100%; background:#111; color:#fff; padding:80px 20px; box-sizing:border-box; display:flex; flex-direction:column; gap:24px; transition:right 0.4s ease; z-index:170;}    
 .side-menu.active {right:0;}    
-.side-menu button {background:none; border:none; color:#fff; font-size:1.2rem; text-align:left; cursor:pointer;}    
+.side-menu button {background:none; border:none; color:#fff; font-size:1.1rem; text-align:left; cursor:pointer; padding-left:14px; position:relative; font-weight:300; letter-spacing:0.05em;}
+
+.side-menu button::before {content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:2px; height:18px; background:#fff; opacity:0.6;}
 
 /* Language Switch */
 .lang-switch {margin-top:auto; display:flex; gap:10px;}    
 .lang-switch button {background:#333; border:none; color:#fff; padding:6px 10px; cursor:pointer;}    
 
 /* Modals */
-.section-modal {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#fff; overflow-y:auto; z-index:200; padding:80px 20px; box-sizing:border-box; animation:fadeIn 0.4s ease;}    
+.section-modal {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#fff; overflow-y:auto; z-index:200; padding:80px 20px; box-sizing:border-box;}    
 .section-modal.active {display:block;}    
 .section-modal-close {position:absolute; top:20px; right:20px; font-size:2rem; cursor:pointer;}    
 
-@keyframes fadeIn {from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);}}    
+ to{opacity:1; transform:translateY(0);}}    
 
 /* Projects */
 .projects {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}    
@@ -64,9 +66,9 @@ footer {text-align:center; padding:40px 20px; font-size:0.9rem; color:#666;}
     <img src="images/profile.jpg" alt="Portrait Linda Ghari">
   </div>
 </header><!-- Buttons to open modals --><!-- Hamburger Menu Button --><div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</div><nav class="side-menu" id="sideMenu">
-  <button onclick="openModal('modal-over-mich'); toggleMenu()">👤 <span data-de>Über mich</span><span data-en style="display:none">About me</span></button>
-  <button onclick="openModal('modal-skills'); toggleMenu()">🛠 <span data-de>Skills</span><span data-en style="display:none">Skills</span></button>
-  <button onclick="openModal('modal-projects'); toggleMenu()">🏛 <span data-de>Projekte</span><span data-en style="display:none">Projects</span></button>  <div class="lang-switch">
+  <button onclick="openModal('modal-over-mich'); toggleMenu()"><span data-de>Über mich</span><span data-en style="display:none">About me</span></button>
+  <button onclick="openModal('modal-skills'); toggleMenu()"><span data-de>Skills</span><span data-en style="display:none">Skills</span></button>
+  <button onclick="openModal('modal-projects'); toggleMenu()"><span data-de>Projekte</span><span data-en style="display:none">Projects</span></button>  <div class="lang-switch">
     <button onclick="setLang('de')">DE</button>
     <button onclick="setLang('en')">EN</button>
   </div>
