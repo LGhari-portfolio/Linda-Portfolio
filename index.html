@@ -35,11 +35,11 @@
  to{opacity:1; transform:translateY(0);}}    
 
 /* Projects */
-.projects {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}    
-.project-card {background:#fafafa; border-radius:6px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.3s ease;}    
-.project-card:hover {transform:scale(1.02);}    
-.project-card img {width:100%; height:180px; object-fit:cover;}    
-.project-card div {padding:15px;}    
+.projekts {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;}    
+.projekt-card {background:#fafafa; border-radius:6px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.3s ease;}    
+.projekt-card:hover {transform:scale(1.02);}    
+.projekt-card img {width:100%; height:180px; object-fit:cover;}    
+.projekt-card div {padding:15px;}    
 
 /* Lightbox */
 .lightbox {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:300;}    
@@ -50,16 +50,16 @@
 
 footer {text-align:center; padding:40px 20px; font-size:0.9rem; color:#666;}
 
-/* Slider */ .slider {overflow-x:auto; display:flex; gap:20px; scroll-snap-type:x mandatory;} .slider .project-card {min-width:280px; scroll-snap-align:start;}
+/* Slider */ .slider {overflow-x:auto; display:flex; gap:20px; scroll-snap-type:x mandatory;} .slider .projekt-card {min-width:280px; scroll-snap-align:start;}
 </style>
 
 </head>
 <body><header>
   <div class="hero-text">
     <h1>Linda Ghari</h1>
-    <h2>Architektin (M.A.) | Internationale Berufserfahrung</h2>
+    <h2>Ausgewählte Projekte</h2>
     <p class="availability">Verfügbar ab Oktober 2026<br/>Festanstellung | Projektmitarbeit | Praktikum</p>
-    <a class="contact-btn" href="mailto:lindaghari@yahoo.com">Kontakt aufnehmen</a><br/><br/>
+    <a class="contact-btn" href="mailto:yourmail@email.com">Kontakt aufnehmen</a><br/><br/>
     <a class="contact-btn" href="cv/Linda_Ghari_CV.pdf" target="_blank">Lebenslauf herunterladen (PDF)</a>
   </div>
   <div class="hero-image">
@@ -68,8 +68,8 @@ footer {text-align:center; padding:40px 20px; font-size:0.9rem; color:#666;}
 </header><!-- Buttons to open modals --><!-- Hamburger Menu Button --><div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</div><nav class="side-menu" id="sideMenu">
   <button onclick="openModal('modal-over-mich'); toggleMenu()"><span data-de>Über mich</span><span data-en style="display:none">About me</span></button>
   <button onclick="openModal('modal-skills'); toggleMenu()"><span data-de>Skills</span><span data-en style="display:none">Skills</span></button>
-  <button onclick="openModal('modal-projects'); toggleMenu()"><span data-de>Projekte</span><span data-en style="display:none">Projects</span></button>  <div class="lang-switch">
-    <button onclick="setLang('de')">DE</button>
+  <button onclick="openModal('modal-projekts'); toggleMenu()"><span data-de>Projekte</span><span data-en style="display:none">Projects</span></button>  <div class="lang-switch">
+    <button onclick="">DE</button>
     <button onclick="setLang('en')">EN</button>
   </div>
 </nav><!-- Section Modals --><div class="section-modal" id="modal-over-mich">
@@ -87,20 +87,34 @@ footer {text-align:center; padding:40px 20px; font-size:0.9rem; color:#666;}
     <li>3D-Visualisierung</li>
     <li>Interdisziplinäre Teamarbeit</li>
   </ul>
-</div><div class="section-modal" id="modal-projects">
+</div><div class="section-modal" id="modal-projekts">
   <span class="section-modal-close" onclick="closeModal()">&times;</span>
   <h3>Selected Projects</h3>
-  <div class="projects slider">
-    <div class="project-card" data-images="images/project1-1.jpg,images/project1-2.jpg,images/project1-3.jpg">
-      <img src="images/project1-1.jpg" alt="Project 1">
-      <div><strong>Residential Building</strong><br/><small>Design & Execution Planning</small></div>
+  <div class="projekts slider">  <!-- Projekt 1 -->  <div class="projekt-card"
+       data-images="projekts/projekt1-1.jpg,projekts/projekt1-2.jpg,projekts/projekt1-3.jpg">
+    <div>
+      <h3>9-geschossiges Wohngebäude mit Tiefgaragen</h3>
+      <p>Wohnungsbau</p>
     </div>
-    <div class="project-card" data-images="images/project2-1.jpg,images/project2-2.jpg">
-      <img src="images/project2-1.jpg" alt="Project 2">
+  </div>  <!-- Projekt 2 -->  <div class="projekt-card"
+       data-images="projekts/projekt2-1.jpg,projekts/projekt2-2.jpg">
+    <div>
+      <h3>Sanierung von Wohnungen</h3>
+      <p>Bestand / Modernisierung</p>
+    </div>
+  </div>  <!-- Projekt 3 -->  <div class="projekt-card"
+       data-images="projekts/projekt3-1.jpg,projekts/projekt3-2.jpg">
+    <div>
+      <h3>Fassaden von Wohngebäuden</h3>
+      <p>Fassadengestaltung</p>
+    </div>
+  </div></div>
+    <div class="projekt-card" data-images="images/projekt2-1.jpg,images/projekt2-2.jpg">
+      <img src="images/projekt2-1.jpg" alt="Project 2">
       <div><strong>Interior Design Project</strong><br/><small>Concept & Visualization</small></div>
     </div>
-    <div class="project-card" data-images="images/project3-1.jpg,images/project3-2.jpg,images/project3-3.jpg">
-      <img src="images/project3-1.jpg" alt="Project 3">
+    <div class="projekt-card" data-images="images/projekt3-1.jpg,images/projekt3-2.jpg,images/projekt3-3.jpg">
+      <img src="images/projekt3-1.jpg" alt="Project 3">
       <div><strong>Mixed-Use Building</strong><br/><small>Sustainable Design</small></div>
     </div>
   </div>
@@ -137,10 +151,10 @@ function setLang(lang){
 // Lightbox
 const lightbox=document.getElementById('lightbox');
 const lightboxImg=lightbox.querySelector('img');
-const projectCards=document.querySelectorAll('.project-card');
+const projektCards=document.querySelectorAll('.projekt-card');
 let currentImages=[];
 let currentIndex=0;
-projectCards.forEach(card=>{
+projektCards.forEach(card=>{
   card.addEventListener('click',()=>{
     currentImages=card.dataset.images.split(',');
     currentIndex=0;
