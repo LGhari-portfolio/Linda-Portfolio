@@ -1,9 +1,11 @@
-<!DOCTYPE html><html lang="de">
+<!DOCTYPE html>
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Linda Ghari | Architektin (M.A.)</title>
-  <meta name="description" content="Architektur-Portfolio von Linda Ghari – Architektin (M.A.), ausgewählte Projekte im Wohnungsbau, Sanierung und Fassadengestaltung." />  <style>
+  <title>Linda Ghari | Architekturdesignerin (M.A.)</title>
+  <meta name="description" content="Architektur-Portfolio von Linda Ghari – Architekturdesignerin (M.A.), ausgewählte Projekte im Wohnungsbau, Sanierung und Fassadengestaltung." />
+  <style>
     body {
       margin: 0;
       font-family: Inter, Arial, Helvetica, sans-serif;
@@ -12,12 +14,12 @@
       line-height: 1.6;
     }
 
-    /* ================= HERO ================= */
+    /* ===== HERO ===== */
     header {
       min-height: 100vh;
       padding: 120px 20px;
       box-sizing: border-box;
-      background: linear-gradient(135deg, rgba(44,62,80,0.85), rgba(106,137,204,0.85)), url('images/hero-bg.jpg') center / cover no-repeat;
+      background: linear-gradient(135deg, rgba(44,62,80,0.9), rgba(106,137,204,0.85)), url('images/hero-bg.jpg') center / cover no-repeat;
       color: #fff;
       display: flex;
       align-items: center;
@@ -34,26 +36,25 @@
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
+      line-height: 1.2;
       margin: 0 0 10px 0;
       font-weight: 500;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
     }
 
     .hero h2 {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
+      line-height: 1.4;
       margin: 0 0 30px 0;
       font-weight: 300;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
     }
 
-    .hero-info {
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-
-    .hero-roles {
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
-      opacity: 0.9;
+    .hero-info, .hero-roles {
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
     }
 
     .hero img {
@@ -61,9 +62,16 @@
       height: 220px;
       border-radius: 50%;
       object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.8);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* ================= MENU ================= */
+    .hero img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    /* ===== MENU ===== */
     .menu-toggle {
       position: fixed;
       top: 24px;
@@ -121,7 +129,7 @@
       opacity: 0.6;
     }
 
-    /* ================= MODAL ================= */
+    /* ===== MODAL ===== */
     .modal {
       display: none;
       position: fixed;
@@ -139,6 +147,20 @@
       margin: auto;
     }
 
+    /* ===== ÜBER MICH ===== */
+    #about .modal-content {
+      background: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      padding: 50px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    #about a {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+
     .modal-close {
       position: fixed;
       top: 24px;
@@ -147,7 +169,7 @@
       cursor: pointer;
     }
 
-    /* ================= PROJECTS ================= */
+    /* ===== PROJEKTE ===== */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -158,6 +180,13 @@
     .project-card {
       background: #fafafa;
       cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
     .project-card img {
@@ -172,7 +201,7 @@
       font-weight: 400;
     }
 
-    /* ================= LIGHTBOX ================= */
+    /* ===== LIGHTBOX ===== */
     .lightbox {
       display: none;
       position: fixed;
@@ -188,83 +217,108 @@
       max-height: 90%;
     }
 
-    /* ================= RESPONSIVE ================= */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .hero {
         grid-template-columns: 1fr;
         text-align: center;
       }
-
-      .hero img {
-        margin: auto;
-      }
+      .hero h1 { font-size: 2.5rem; }
+      .hero h2 { font-size: 1.2rem; }
+      .hero img { width: 160px; height: 160px; margin: 20px auto 0 auto; }
+      #about .modal-content { padding: 30px 20px; margin: 0 10px; text-align: center; }
+      .project-card img { height: 180px; }
     }
-  </style></head>
-<body>  <!-- MENU -->  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </style>
+</head>
+<body>
+
+  <!-- MENU -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   <nav id="menu">
     <button onclick="openModal('about')">Über mich</button>
     <button onclick="openModal('projects')">Ausgewählte Projekte</button>
     <button onclick="openModal('contact')">Kontakt</button>
-  </nav>  <!-- HERO -->  <header>
+  </nav>
+
+  <!-- HERO -->
+  <header>
     <div class="hero">
       <div>
         <h1>Linda Ghari</h1>
-        <h2>Architektin (M.A.)</h2><p class="hero-info">
-      Arbeitserlaubnis für Deutschland vorhanden<br />
-      Arbeitsaufnahme ab Oktober 2026 möglich
-    </p>
+        <h2>Architekturdesignerin (M.A.)</h2>
+        <p class="hero-info">
+          Erfahrung in Entwurfs- und Ausführungsplanung, nachhaltiger Architektur<br />
+          Offen für BIM-basierte Planungsmethoden
+        </p>
+        <p class="hero-roles">
+          Festanstellung | Projektmitarbeit | Praktikum
+        </p>
+      </div>
+      <img src="images/profile.jpg" alt="Linda Ghari" />
+    </div>
+  </header>
 
-    <p class="hero-roles">
-      Festanstellung | Projektmitarbeit | Praktikum
-    </p>
-  </div>
-
-  <img src="images/profile.jpg" alt="Linda Ghari" />
-</div>
-
-  </header>  <!-- ÜBER MICH -->  <section id="about" class="modal">
+  <!-- ÜBER MICH -->
+  <section id="about" class="modal">
     <div class="modal-close" onclick="closeModal()">×</div>
     <div class="modal-content">
       <h2>Über mich</h2>
       <p>
-        Architektin (M.A.) mit internationaler Berufserfahrung im Wohnungsbau,
-        in der Sanierung sowie in der Fassadengestaltung. Sicher im Umgang mit
-        Entwurfs- und Ausführungsplanung sowie mit deutschen Bauvorschriften.
+        Ich bin <strong>Architekturdesignerin (M.A.)</strong> mit mehrjähriger Erfahrung in Entwurfs- und Ausführungsplanung, energieeffizientem Bauen und der Zusammenarbeit mit interdisziplinären Teams.
+      </p>
+      <p>
+        Im Januar 2025 habe ich die Weiterbildung „Bauwesen für zugewanderte Bauingenieure und Architekten“ erfolgreich abgeschlossen und fundierte Kenntnisse zu Bauabläufen, Projektplanung, HOAI und der Hamburgischen Bauordnung erworben.
+      </p>
+      <p>
+        Ergänzend dazu bin ich offen dafür, Erfahrungen mit <strong>BIM-basierten Planungsmethoden</strong> zu sammeln und meine Kenntnisse in digitalen Planungsprozessen weiterzuentwickeln.
+      </p>
+      <p>
+        Ich arbeite strukturiert, zuverlässig und teamorientiert und möchte meine architektonischen und gestalterischen Kompetenzen langfristig in spannenden Projekten in Deutschland einbringen.
       </p>
       <p>
         <a href="cv/Linda_Ghari_CV.pdf" target="_blank">Lebenslauf als PDF herunterladen</a>
       </p>
     </div>
-  </section>  <!-- PROJEKTE -->  <section id="projects" class="modal">
+  </section>
+
+  <!-- PROJEKTE -->
+  <section id="projects" class="modal">
     <div class="modal-close" onclick="closeModal()">×</div>
     <div class="modal-content">
-      <h2>Ausgewählte Projekte</h2><div class="projects">
-    <div class="project-card" data-images="projects/project1-1.jpg,projects/project1-2.jpg,projects/project1-3.jpg">
-      <img src="projects/project1-1.jpg" alt="Projekt 1" />
-      <h3>9-geschossiges Wohngebäude mit Tiefgaragen</h3>
+      <h2>Ausgewählte Projekte</h2>
+      <div class="projects">
+        <div class="project-card" data-images="projects/project1-1.jpg,projects/project1-2.jpg,projects/project1-3.jpg">
+          <img src="projects/project1-1.jpg" alt="Projekt 1" />
+          <h3>9-geschossiges Wohngebäude mit Tiefgaragen</h3>
+        </div>
+        <div class="project-card" data-images="projects/project2-1.jpg,projects/project2-2.jpg">
+          <img src="projects/project2-1.jpg" alt="Projekt 2" />
+          <h3>Sanierung von Wohnungen</h3>
+        </div>
+        <div class="project-card" data-images="projects/project3-1.jpg,projects/project3-2.jpg">
+          <img src="projects/project3-1.jpg" alt="Projekt 3" />
+          <h3>Fassaden von Wohngebäuden</h3>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="project-card" data-images="projects/project2-1.jpg,projects/project2-2.jpg">
-      <img src="projects/project2-1.jpg" alt="Projekt 2" />
-      <h3>Sanierung von Wohnungen</h3>
-    </div>
-
-    <div class="project-card" data-images="projects/project3-1.jpg,projects/project3-2.jpg">
-      <img src="projects/project3-1.jpg" alt="Projekt 3" />
-      <h3>Fassaden von Wohngebäuden</h3>
-    </div>
-  </div>
-</div>
-
-  </section>  <!-- KONTAKT -->  <section id="contact" class="modal">
+  <!-- KONTAKT -->
+  <section id="contact" class="modal">
     <div class="modal-close" onclick="closeModal()">×</div>
     <div class="modal-content">
       <h2>Kontakt</h2>
-      <p>E-Mail: <a href="mailto:yourmail@email.com">yourmail@email.com</a></p>
+      <p>E-Mail: <a href="mailto:lindaghari@yahoo.com">yourmail@email.com</a></p>
     </div>
-  </section>  <!-- LIGHTBOX -->  <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
     <img id="lightbox-img" />
-  </div>  <script>
+  </div>
+
+  <script>
     const menu = document.getElementById('menu');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
@@ -290,5 +344,6 @@
         lightbox.style.display = 'flex';
       });
     });
-  </script></body>
+  </script>
+</body>
 </html>
