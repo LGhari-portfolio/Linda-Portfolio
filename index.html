@@ -307,14 +307,39 @@ function closeModal() {
 document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
 }
 
+let currentImages = [];
+let currentIndex = 0;
+
 document.querySelectorAll('.project-card').forEach(card => {
-const images = card.dataset.images.split(',');
-card.addEventListener('click', () => {
-lightboxImg.src = images[0];
-lightbox.style.display = 'flex';
-});
+  const images = card.dataset.images.split(',');
+
+  card.addEventListener('click', () => {
+    currentImages = images;
+    currentIndex = 0;
+    showImage();
+    lightbox.style.display = 'flex';
+  });
 });
 
+function showImage() {
+  lightboxImg.src = currentImages[currentIndex];
+}
+
+function next() {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  showImage();
+}
+
+function prev() {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  showImage();
+}
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = 'none';
+  }
+});
 </script>  </body>
 
 </html>
