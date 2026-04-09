@@ -288,9 +288,11 @@ text-align: center;
       <h2>Kontakt</h2>      
       <p>E-Mail: <a href="mailto:lindaghari@yahoo.com">lindaghari@yahoo.com</a></p>      
     </div>      
-  </section>    <!-- LIGHTBOX -->    <div class="lightbox" id="lightbox" onclick="this.style.display='none'">      
-    <img id="lightbox-img" />      
-  </div>    <script>      
+  </section>    <!-- LIGHTBOX -->    <div class="lightbox" id="lightbox">
+  <span class="nav prev" onclick="prev()">❮</span>
+  <img id="lightbox-img" />
+  <span class="nav next" onclick="next()">❯</span>
+</div>    <script>      
     const menu = document.getElementById('menu');      
     const lightbox = document.getElementById('lightbox');      
     const lightboxImg = document.getElementById('lightbox-img');    function toggleMenu() {      
